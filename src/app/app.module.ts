@@ -6,8 +6,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CurrencyDetailsComponent } from './currency/currency-details.component';
+import { HomeComponent } from './components/home/home.component';
+import { CurrencyDetailsComponent } from './components/currency/currency-details.component';
+import { CurrenciesPipe} from './pipes/currencies.pipe';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CurrencyDetailsComponent } from './currency/currency-details.component'
   declarations: [
     AppComponent,
     HomeComponent,
-    CurrencyDetailsComponent
+    CurrencyDetailsComponent,
+    CurrenciesPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  allCurrencyUrl: 'https://api.openfintech.io/v1/currencies?page[size]=776',
+  currencyUrl: 'https://api.openfintech.io/v1/currencies',
   production: false
 };
 

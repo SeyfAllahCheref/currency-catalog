@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from '../currency.service';
+import { CurrencyService } from '../../services/currency.service';
 
 @Component({
   selector: 'home-currencies',
@@ -9,6 +9,8 @@ import { CurrencyService } from '../currency.service';
 export class HomeComponent implements OnInit {
   currencies = [];
   currenciesNumber = 10;
+  pipeText = '';
+  pipeOption = 'name';
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {

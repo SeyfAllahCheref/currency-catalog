@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { CurrencyService } from '../currency.service';
+import { CurrencyService } from '../../services/currency.service';
 
 @Component({
   selector: 'currency-detail',
