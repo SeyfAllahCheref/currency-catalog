@@ -1,0 +1,12 @@
+<div *ngIf="currency">
+  <h2>{{ currency.attributes.code | uppercase }}</h2>
+  <ul>
+    <li><span>code: </span>{{this.currency.attributes.code}}</li>
+    <li><span>name: </span>{{currency.attributes.name}}</li>
+    <li><span>currency_type: </span>{{currency.type}}</li>
+    <li><span>code_iso_numeric3: </span>{{currency.attributes.code_iso_numeric3}}</li>
+    <li><span>code_iso_alpha3: </span>{{currency.attributes.code_iso_alpha3}}</li>
+  </ul>
+
+  <button (click)="goBack()">go back</button>
+</div>
