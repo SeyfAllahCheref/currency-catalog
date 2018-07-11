@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { CurrencyService } from '../../services/currency.service';
 
 @Component({
-  selector: 'currency-detail',
+  selector: 'currency-details',
   templateUrl: './currency-details.component.html',
   styleUrls: [ './currency-details.component.css' ]
 })
