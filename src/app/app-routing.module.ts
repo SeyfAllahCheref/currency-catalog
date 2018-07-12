@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
+import { GridComponent } from './components/grid/grid.component';
 import { CurrencyDetailsComponent } from './components/currency/currency-details.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: GridComponent },
   { path: 'currency/:id', component: CurrencyDetailsComponent },
 ];
 

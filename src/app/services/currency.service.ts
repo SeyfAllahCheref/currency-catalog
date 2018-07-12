@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { retry } from 'rxjs/internal/operators';
+import {map, retry} from 'rxjs/internal/operators';
 
 import { environment } from '../../environments/environment';
 import { HandlerError } from '../shared/handlerError';
+import {Currency, CurrencyData} from '../model/Currencies';
 
 
 @Injectable({
@@ -22,8 +23,9 @@ private currencyUrl = environment.currencyUrl;
    *
    * @returns {Observable<any>}
    */
-  getCurrencies(): Observable<any> {
-    return this.http.get<any>(this.allCurrencyUrl).pipe(
+  getCurrencies(): Observable<Currency> {
+    return this.http.get<Currency>(this.allCurrencyUrl).pipe(
+      map(currencies => currencies),
       retry(2), // retry a failed request up to 3 times
       catchError(this.handler.handleError) // then handle the error
     );
@@ -35,9 +37,10 @@ private currencyUrl = environment.currencyUrl;
    * @param id the currency identifier
    * @returns {Observable<any>}
    */
-  getCurrency(id: string): Observable<any> {
+  getCurrency(id: string): Observable<CurrencyData> {
     const url = `${this.currencyUrl}/${id}`;
-    return this.http.get<any>(url).pipe(
+    return this.http.get<CurrencyData>(url).pipe(
+      map(currency => currency),
       retry(2), // retry a failed request up to 3 times
       catchError(this.handler.handleError) // then handle the error
     );

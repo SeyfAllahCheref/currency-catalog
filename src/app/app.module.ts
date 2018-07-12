@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingModule } from 'ngx-loading';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { GridComponent } from './components/grid/grid.component';
 import { CurrencyDetailsComponent } from './components/currency/currency-details.component';
 import { CurrenciesPipe} from './pipes/currencies.pipe';
 
@@ -16,11 +17,12 @@ import { CurrenciesPipe} from './pipes/currencies.pipe';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    LoadingModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
+    GridComponent,
     CurrencyDetailsComponent,
     CurrenciesPipe
   ],

@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import { CurrencyService } from '../../services/currency.service';
+import {Currency} from '../../model/Currencies';
 
 @Component({
   selector: 'home-currencies',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.css']
 })
-export class HomeComponent implements OnInit {
-  currencies = [];
+export class GridComponent implements OnInit {
+  currencies: Currency;
   currenciesNumber = 10;
   pipeText = '';
   pipeOption = 'name';
+  isLoading = true;
   constructor(private currencyService: CurrencyService) { }
 
   ngOnInit() {
@@ -20,6 +22,9 @@ export class HomeComponent implements OnInit {
 
   getHeroes(): void {
     this.currencyService.getCurrencies()
-    .subscribe(currencies => this.currencies = currencies.data);
+    .subscribe(currencies => {
+      this.isLoading = false;
+      this.currencies = currencies;
+    });
   }
 }

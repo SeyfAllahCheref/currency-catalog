@@ -1,7 +1,7 @@
-<div *ngIf="currency">
+<div *ngIf="!isLoading">
   <h2>{{ currency.attributes.code | uppercase }}</h2>
   <ul>
-    <li><span>code: </span>{{this.currency.attributes.code}}</li>
+    <li><span>code: </span>{{currency.attributes.code}}</li>
     <li><span>name: </span>{{currency.attributes.name}}</li>
     <li><span>currency_type: </span>{{currency.type}}</li>
     <li><span>code_iso_numeric3: </span>{{currency.attributes.code_iso_numeric3}}</li>
@@ -10,3 +10,4 @@
 
   <button (click)="goBack()">go back</button>
 </div>
+<ngx-loading [show]="isLoading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>

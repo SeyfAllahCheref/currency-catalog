@@ -1,5 +1,6 @@
 <h3>Available currencies</h3>
-<div class="container">
+<ngx-loading [show]="isLoading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+<div class="container" *ngIf="!isLoading">
   <div class="searchField">
     <input type="text" [(ngModel)]="pipeText" placeholder="Search">
     <select [(ngModel)]="pipeOption">
@@ -10,7 +11,7 @@
     </select>
   </div>
   <div class="currencies grid grid-pad">
-    <a *ngFor="let item of currencies | currenciesPipe:{ pipeOption: pipeOption, pipeText: pipeText } | paginate: { itemsPerPage: currenciesNumber, currentPage: p }" class="col-1-4"
+    <a *ngFor="let item of currencies.data | currenciesPipe:{ pipeOption: pipeOption, pipeText: pipeText } | paginate: { itemsPerPage: currenciesNumber, currentPage: p }" class="col-1-4"
         routerLink="/currency/{{item.id}}">
       <div class="module">
         <h4>ID:{{item.id}}</h4>
