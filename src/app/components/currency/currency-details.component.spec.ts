@@ -1,8 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { CurrencyDetailsComponent } from './currency-details.component';
 import { CurrencyService } from '../../services/currency.service';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { LoadingModule } from 'ngx-loading';
 
 describe('CurrencyDetailsComponent', () => {
   let CurrencyServiceStub: Partial<any>;
@@ -17,7 +18,7 @@ describe('CurrencyDetailsComponent', () => {
   it('should be created', () => {
     TestBed.configureTestingModule({
       declarations: [ CurrencyDetailsComponent ],
-      imports: [ RouterModule ],
+      imports: [ RouterModule, LoadingModule ],
       providers: [
         {provide: CurrencyService, useValue: CurrencyServiceStub },
         {provide: ActivatedRoute, useValue: ActivatedRouteStub },

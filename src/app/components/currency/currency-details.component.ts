@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { CurrencyService } from '../../services/currency.service';
-import {Currency, CurrencyData} from '../../model/Currencies';
+import { CurrencyData } from '../../model/Currencies';
 
 @Component({
   selector: 'currency-details',
@@ -25,14 +25,8 @@ export class CurrencyDetailsComponent implements OnInit {
   }
 
   getCurrency(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.currencyService.getCurrency(id)
-      .subscribe(currency => {
-        this.isLoading = false;
-        this.currency = currency;
-        console.log(this.isLoading);
-      });
+   this.currency = this.route.snapshot.data.currency.data;
+   this.isLoading = false;
   }
 
   goBack(): void {

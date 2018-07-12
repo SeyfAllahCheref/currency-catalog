@@ -3,7 +3,7 @@
 This project is developed with Angular 6 and it uses the API  [openfintech](https://api.openfintech.io)
 
 ## Search by currency fields feature
-In order to test the search feature you can change the filter to ID then use this ID `ABCBCNY` or change the filter
+In order to test the search feature you can change the filter to code then use this ID `ABCBCNY` or change the filter
 to Type and use this type `currencies`
 
 ## Development server
