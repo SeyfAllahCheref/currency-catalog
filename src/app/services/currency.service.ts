@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import {map, retry} from 'rxjs/internal/operators';
@@ -13,8 +13,11 @@ import {Currency, CurrencyData} from '../model/Currencies';
   providedIn: 'root',
 })
 export class CurrencyService {
-private allCurrencyUrl = environment.allCurrencyUrl;
 private currencyUrl = environment.currencyUrl;
+
+headers: HttpHeaders = new HttpHeaders({
+    'Accept': 'application/vnd.api+json'
+  });
 
   constructor(private http: HttpClient, private handler: HandlerError) {}
 
@@ -23,8 +26,17 @@ private currencyUrl = environment.currencyUrl;
    *
    * @returns {Observable<any>}
    */
-  getCurrencies(): Observable<Currency> {
-    return this.http.get<Currency>(this.allCurrencyUrl).pipe(
+  getCurrencies(pageNumber: number, pageSize: number, filter: string, filterText: string): Observable<Currency> {
+    const fi = `filter[${filter}]`;
+    const params: HttpParams = new HttpParams()
+      .append('page[number]', pageNumber.toString())
+      .append('page[size]', pageSize.toString())
+      .append('filter[' + filter + ']', filterText);
+
+    return this.http.get<Currency>(this.currencyUrl, {
+      headers: this.headers,
+      params,
+    }).pipe(
       map(currencies => currencies),
       retry(2), // retry a failed request up to 3 times
       catchError(this.handler.handleError) // then handle the error

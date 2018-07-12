@@ -1,0 +1,10 @@
+<div class="searchField">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search">
+  <select [(ngModel)]="searchBy">
+    <option value="name" selected>Name</option>
+    <option value="code">Code</option>
+    <option value="type">Type</option>
+  </select>
+  <button (click)="sendSearchOptions()">Find</button>
+  <button (click)="emptyFields()">Clear</button>
+</div>

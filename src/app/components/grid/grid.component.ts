@@ -3,28 +3,17 @@ import { CurrencyService } from '../../services/currency.service';
 import {Currency} from '../../model/Currencies';
 
 @Component({
-  selector: 'home-currencies',
+  selector: 'grid-currencies',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridComponent {
   currencies: Currency;
-  currenciesNumber = 10;
-  pipeText = '';
-  pipeOption = 'name';
   isLoading = true;
   constructor(private currencyService: CurrencyService) { }
 
-  ngOnInit() {
-    this.getHeroes();
-    console.log(this.currencies);
-  }
-
-  getHeroes(): void {
-    this.currencyService.getCurrencies()
-    .subscribe(currencies => {
-      this.isLoading = false;
-      this.currencies = currencies;
-    });
+  onChanges($event) {
+    this.currencies = $event;
+    this.isLoading = false;
   }
 }

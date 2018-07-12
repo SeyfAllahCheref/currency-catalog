@@ -1,0 +1,8 @@
+.paginator {
+  display: inline-flex;
+  justify-content: center;
+  grid-row: 2;
+}
+.select {
+  height: 37px;
+}
