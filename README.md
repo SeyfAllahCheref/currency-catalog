@@ -27,7 +27,7 @@ Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github
 
 Run `npm e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Completed Task:
+## Completed Tasks:
 
 * Retrieving all currencies using [openfintech](https://api.openfintech.io)
 * Displaying all currencies
