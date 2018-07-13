@@ -1,13 +1,17 @@
-<div *ngIf="!isLoading">
+<div *ngIf="!isLoading" style="text-align: center;">
   <h2>{{ currency.attributes.code | uppercase }}</h2>
-  <ul>
-    <li><span>code: </span>{{currency.attributes.code}}</li>
-    <li><span>name: </span>{{currency.attributes.name}}</li>
-    <li><span>currency_type: </span>{{currency.type}}</li>
-    <li><span>code_iso_numeric3: </span>{{currency.attributes.code_iso_numeric3}}</li>
-    <li><span>code_iso_alpha3: </span>{{currency.attributes.code_iso_alpha3}}</li>
-  </ul>
+  <div style="text-align: -webkit-center;  padding-bottom: 15px" class="currencies grid grid-pad">
+    <div class="module">
+      <ul style="text-align: left">
+        <li><span>code: </span>{{currency.attributes.code}}</li>
+        <li><span>name: </span>{{currency.attributes.name}}</li>
+        <li><span>currency_type: </span>{{currency.type}}</li>
+        <li><span>code_iso_numeric3: </span>{{currency.attributes.code_iso_numeric3}}</li>
+        <li><span>code_iso_alpha3: </span>{{currency.attributes.code_iso_alpha3}}</li>
+      </ul>
+    </div>
+  </div>
 
-  <button (click)="goBack()">go back</button>
+  <button class="btn btn-info" (click)="goBack()">Back</button>
 </div>
 <ngx-loading [show]="isLoading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>

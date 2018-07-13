@@ -1,6 +1,4 @@
-import { Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
-import { CurrencyService } from '../../services/currency.service';
-import { Currency} from '../../model/Currencies';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SearchOptions } from '../../model/SearchOptions';
 
 @Component({
@@ -13,25 +11,25 @@ export class SearchComponent implements OnInit {
   options: SearchOptions;
   searchBy: string;
   searchText: string;
+  @Input() notFound: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.notFound = false;
+    console.log(this.notFound);
   }
 
   sendSearchOptions(): void {
-    if(this.searchBy !== '' && this.searchText !== '') {
-      this.options = new SearchOptions(this.searchBy, this.searchText);
-      console.log(this.options);
-      this.searchOptions.emit(this.options);
-    }
+    this.options = new SearchOptions(this.searchBy, this.searchText);
+    this.searchOptions.emit(this.options);
   }
 
   emptyFields(): void {
     this.searchBy = '';
     this.searchText = '';
-    this.options = new SearchOptions(this.searchBy, this.searchText);
-    console.log(this.options);
+    this.options = new SearchOptions(null, null);
+    this.notFound = false;
     this.searchOptions.emit(this.options);
   }
 }

@@ -7,13 +7,15 @@ import { CurrenciesResolver } from './resolvers/currency.resolver';
 
 const routes: Routes = [
   { path: '', component: GridComponent },
-  { path: 'currency/:id',
+  {
+    path: 'currency/:id',
     component: CurrencyDetailsComponent,
-    resolve: { currency: CurrenciesResolver }},
+    resolve: { currency: CurrenciesResolver},
+  },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes, { useHash: true }) ],
   exports: [ RouterModule ],
   providers: [ CurrenciesResolver ]
 })

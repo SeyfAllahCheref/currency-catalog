@@ -11,7 +11,6 @@ import { GridComponent } from './components/grid/grid.component';
 import { CurrencyDetailsComponent } from './components/currency/currency-details.component';
 import { SearchComponent } from './components/search/search.component';
 import { PaginatorComponent} from './components/paginator/paginator.component';
-import { CurrenciesPipe} from './pipes/currencies.pipe';
 
 import { CurrencyService } from './services/currency.service';
 
@@ -28,11 +27,10 @@ import { CurrencyService } from './services/currency.service';
     AppComponent,
     GridComponent,
     CurrencyDetailsComponent,
-    CurrenciesPipe,
     PaginatorComponent,
     SearchComponent
   ],
-  providers: [CurrencyService],
-  bootstrap: [AppComponent]
+  providers: [ CurrencyService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

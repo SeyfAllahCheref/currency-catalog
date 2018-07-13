@@ -1,8 +1,9 @@
-<h3>Available currencies</h3>
+<h3>Available Currencies</h3>
+<br>
 <ngx-loading [show]="isLoading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 <div class="container">
   <div class="currencies grid grid-pad" *ngIf="!isLoading">
-    <a *ngFor="let item of currencies.data | currenciesPipe:{ pipeOption: pipeOption, pipeText: pipeText }" class="col-1-4"
+    <a *ngFor="let item of currencies.data" class="col-1-4"
         routerLink="/currency/{{item.id}}">
       <div class="module">
         <h4>ID:{{item.id}}</h4>

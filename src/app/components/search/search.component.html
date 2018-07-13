@@ -1,10 +1,12 @@
 <div class="searchField">
-  <input type="text" [(ngModel)]="searchText" placeholder="Search By">
-  <select [(ngModel)]="searchBy">
-    <option value="code">Code</option>
-    <option value="type">Type</option>
-    <option value="name">Name</option>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search By" [ngClass]="{'alert-danger' : notFound}">
+  <select [(ngModel)]="searchBy" [ngClass]="{'alert-danger' : notFound}">
+    <option value="search">Code</option>
+    <option value="search">Type</option>
+    <option value="search">Name</option>
+    <option value="search">ID</option>
   </select>
-  <button (click)="sendSearchOptions()">Find</button>
-  <button (click)="emptyFields()">Clear</button>
+  <button class="btn btn-info" (click)="sendSearchOptions()" [disabled]="!searchText||!searchBy">Find</button>
+  <button class="btn btn-info" (click)="emptyFields()" [disabled]="!searchText||!searchBy">Clear</button>
 </div>
+<div class="notFound" *ngIf="notFound">Currency not found</div>

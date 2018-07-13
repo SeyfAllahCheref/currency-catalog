@@ -1,0 +1,9 @@
+.module {
+  padding: 20px;
+  color: #ffffff;
+  max-height: 164px;
+  min-width: 120px;
+  background-color: #007bff;
+  border-radius: 20px;
+  width: 300px;
+}
