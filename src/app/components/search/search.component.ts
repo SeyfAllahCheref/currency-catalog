@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.notFound = false;
-    console.log(this.notFound);
   }
 
   sendSearchOptions(): void {
