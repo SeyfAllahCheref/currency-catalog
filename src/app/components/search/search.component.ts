@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SearchOptions } from '../../model/SearchOptions';
+import { SearchOptions } from '../../models/SearchOptions';
 
 @Component({
   selector: 'currencies-search',

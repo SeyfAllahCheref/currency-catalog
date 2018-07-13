@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CurrencyService } from '../../services/currency.service';
-import { Currency } from '../../model/Currencies';
+import { Currency } from '../../models/Currencies';
 
 @Component({
   selector: 'currencies-paginator',

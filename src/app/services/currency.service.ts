@@ -6,7 +6,7 @@ import {map, retry} from 'rxjs/internal/operators';
 
 import { environment } from '../../environments/environment';
 import { HandlerError } from '../shared/handlerError';
-import {Currency, CurrencyData} from '../model/Currencies';
+import {Currency, CurrencyData} from '../models/Currencies';
 
 
 @Injectable({

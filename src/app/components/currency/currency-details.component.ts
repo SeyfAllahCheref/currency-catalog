@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { CurrencyService } from '../../services/currency.service';
-import { CurrencyData } from '../../model/Currencies';
+import { CurrencyData } from '../../models/Currencies';
 
 @Component({
   selector: 'currency-details',
