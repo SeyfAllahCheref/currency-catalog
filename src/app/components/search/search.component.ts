@@ -7,11 +7,12 @@ import { SearchOptions } from '../../models/SearchOptions';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  @Input() notFound: boolean;
   @Output() searchOptions = new EventEmitter<SearchOptions>();
+
   options: SearchOptions;
   searchBy: string;
   searchText: string;
-  @Input() notFound: boolean;
 
   constructor() { }
 

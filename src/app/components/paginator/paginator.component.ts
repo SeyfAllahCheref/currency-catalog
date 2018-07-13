@@ -8,8 +8,9 @@ import { Currency } from '../../models/Currencies';
   styleUrls: ['./paginator.component.css']
 })
 export class PaginatorComponent implements OnInit {
-  currencies: Currency;
   @Output() outputCurrencies = new EventEmitter<Currency>();
+
+  currencies: Currency;
   currenciesByPage = 10;
   pageNumber = 1;
   notFound = false;
