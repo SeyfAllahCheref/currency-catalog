@@ -1,0 +1,21 @@
+Demande de création d'un accès à l'espace sécurisé
+
+Je souhaite accéder à mon espace particulier depuis impots.gouv.fr. 
+    Les informations utiles au traitement de ma demande sont les suivantes: 
+    Etat civil: 
+   Nom de naissance: Cheref 
+       Nom d'usage: Cheref 
+   Prénom(s): Seyf allah 
+   Date de naissance: 26/04/1993 
+   Pays de naissance: Tunisie 
+   Département de naissance: 99 
+   Ville de naissance: Tunis 
+Adresse mail: seifallahcheref@gmail.com 
+Téléphone: 
+       0667881022 
+Adresse postale: 
+       Numéro et rue: 341 rue d'estienne d'orves 
+   Complément d'adresse: b301 
+   Ville: colombes 
+   Code postal: 92700 
+Bien cordialement. 
